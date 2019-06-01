@@ -47,7 +47,7 @@
 
 ** **
 
-![](.img\仓库.png)
+![](https://github.com/hubhack/git/blob/master/img/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 
 **使用**
 
