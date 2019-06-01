@@ -50,7 +50,7 @@ yum install git
 
 **初始化一个版本库**
 
-```python
+```shell
 $ git init
 Initialized empty Git repository in /home/python/magedu/projects/cmdb/.git/
 ```
@@ -83,7 +83,7 @@ $ git add index.htm
 
 **查看状态**
 
-```pytohn
+```shell
 $ git status
 $ git status -s
 ```
