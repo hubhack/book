@@ -198,7 +198,7 @@ $ git status -s
 
 **提交成功**
 
-**文件的生命周期**![](E:\git\git\img\生命周期.png)
+**文件的生命周期**![](./img/生命周期.png)
 
 **文件add后，就成为可跟踪文件的未修改状态unmodiﬁed，修改后，文件就变成modiﬁed状态。再次add后，将变 化提交到索引，状态变为staged，这才能提交。提交成功，文件状态从staged变回unmodiﬁed。**
 
