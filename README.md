@@ -24,7 +24,9 @@
 
 **从RHEL上安装非常简单**
 
-> **\# yum install git**
+```shell
+yum install git
+```
 
 **windows**
 
@@ -42,12 +44,7 @@
 | remote 远程版本库          | 网络上的另一个版本库，可以和本地库交互                  |
 
 
-
-
-
-** **
-
-![](.\img\生命周期.png)
+![](.\img\仓库.png)
 
 **使用**
 
@@ -59,17 +56,13 @@ Initialized empty Git repository in /home/python/magedu/projects/cmdb/.git/
 ```
 
 
-
-
-> ****
-
 **在当前目录中增加了一个.git目录，不要自行修改这个目录里面的文件。**
 
 **当前目录一般是项目的根目录。**
 
 **添加文件**
 
-```python
+```shell
 $ echo \'\<html\>\<head\>\<title\>test\</title\>\</head\>\<body\>My Website\</body\>\</html\>\' > index.htm
 $ git add index.htm
 ```
@@ -108,19 +101,20 @@ $ git status -s
 **.gitignore文件中，目录以/结尾，行起始的!是取反**
 
 **.gitignore内容如下：**
+```
+**\*.ipynb**
 
-> **\*.ipynb**
->
-> **\_\_pycache\_\_/**
->
-> **.python-version**
->
-> 忽略文件不需要自己写，Python的已经有了
->
-> [https://github.com/github/gitignore/blob/master/Python.gitignore](https://github.com/github/gitignore/blob/master/Python.gitignore)
->
->  $ wget -O .gitignore https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
+**\_\_pycache\_\_/**
 
+**.python-version**
+
+忽略文件不需要自己写，Python的已经有了
+
+
+[https://github.com/github/gitignore/blob/master/Python.gitignore](https://github.com/github/gitignore/blob/master/Python.gitignore)
+
+$ wget -O .gitignore https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
+ ```
 其它语言的在这里找 [https://github.com/github/gitignore](https://github.com/github/gitignore)
 
 **再次看看状态**
@@ -128,38 +122,39 @@ $ git status -s
 > **\$ git status**
 
 **提交代码**
+```shell
 
-> **\$ git commit   --help**
->
-> **\$ git commit -m \"First Commit\"**
->
-> **\[master (root-commit) 8a73953\] First Commit**
->
-> **Committer: python \<python\@nodex.(none)\>**
->
-> **Your name and email address were configured automatically based**
->
-> **on your username and hostname. Please check that they are accurate.**
->
-> **You can suppress this message by setting them explicitly:**
->
-> ​		git config \--global user.name \"Your Name\"
->
-> ​		git config \--global user.email you\@example.com
->
-> **If the identity used for this commit is wrong, you can fix it with:**
->
-> ​		git commit \--amend \--author=\'Your Name \<you\@example.com\>\'	
->
-> **1 files changed, 1 insertions(+), 0 deletions(-)**
->
-> **create mode 100644 index.htm**
->
-> **\$ git status**
->
-> **\# On branch master**
->
-> **nothing to commit (working directory clean)**
+$ git commit   --help
+
+$ git commit -m \"First Commit\"
+
+[master (root-commit) 8a73953\] First Commit
+
+Committer: python \<python\@nodex.(none)\>
+
+Your name and email address were configured automatically based
+
+on your username and hostname. Please check that they are accurate.
+
+You can suppress this message by setting them explicitly:
+		git config \--global user.name \"Your Name\"
+		git config \--global user.email you\@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+		git commit \--amend \--author=\'Your Name \<you\@example.com\>\'	
+
+1 files changed, 1 insertions(+), 0 deletions(-)
+
+create mode 100644 index.htm
+
+$ git status
+
+On branch master
+
+nothing to commit (working directory clean)
+
+```
+
 
 **commit 提交更改到版本库**
 
@@ -203,7 +198,7 @@ $ git status -s
 
 **提交成功**
 
-**文件的生命周期**![](E:\git\git\img\生命周期.png)
+**文件的生命周期**![](./img/生命周期.png)
 
 **文件add后，就成为可跟踪文件的未修改状态unmodiﬁed，修改后，文件就变成modiﬁed状态。再次add后，将变 化提交到索引，状态变为staged，这才能提交。提交成功，文件状态从staged变回unmodiﬁed。**
 
@@ -419,14 +414,6 @@ $ git diff
 $ git diff --cached
 
 $ git diff HEAD
-
-
-
-
-
-
-
-
 ```
 
 | 命令             | 说明                                               |
@@ -452,8 +439,6 @@ $ git reset --hard # 重置暂存区与工作区为上一次commit $ cat about.h
 | git reset \--hard[commit\] | 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致 |
 | git reset \--keep[commit\] | 重置当前HEAD为指定commit，但保持暂存区和工作区不变           |
 
-
-
 ### 移动和删除
 
 git mv src dest    改名, 直接把改名的改动放入暂存区
@@ -464,10 +449,7 @@ git rm --cached file 将文件从暂存转成未暂存,从版本库中删除, �
 
 以上都算是改动, 必须commit才算是真改动了
 
-
-
 --------------------------- ------------
-
 
 **push到服务器**
 
@@ -482,8 +464,6 @@ git rm --cached file 将文件从暂存转成未暂存,从版本库中删除, �
   git remote -v   详细列出所有远程仓
   git remote add [shortname] [url]   指定一个名称指向远程仓库
 
-
-
 指定推送到的远程主机和分支
 
 指定当前分支推送到的主机和对应分支
@@ -495,8 +475,6 @@ git rm --cached file 将文件从暂存转成未暂存,从版本库中删除, �
 **\# simple方式，默认只推送当前分支到默认关联的远程仓库**
 
 > **-u 第一次远程推送的时候加上，以后就可以不使用-u参数，可以git push origin master，也可以git push都使用默 认。**
-
-
 
 > **\$ echo \"welcome about\" \> about.htm**
 >
@@ -540,13 +518,9 @@ git rm --cached file 将文件从暂存转成未暂存,从版本库中删除, �
 
 **打开gogs的用户设置 -\> SSH密钥**
 
-
-
 **打开公钥文件\~/.ssh/id\_rsa.pub，将内容贴入"密钥内容"框中，点击"增加密钥"**
 
 **那么SSH登录的用户使用的链接如下图**
-
-
 
 **SSH连接远程库**
 
@@ -574,23 +548,15 @@ git rm --cached file 将文件从暂存转成未暂存,从版本库中删除, �
 
 **Git私服创建cmdb项目版本库**
 
-
-
 **获得远程仓库地址 git\@192.168.142.135:my/cmdb.git 如有必要，添加密钥，这里不再赘述。**
 
 **从版本控制工具中获取项目，选择Git**
 
 **选择项目目录，填入远程版本库地址，Test测试一下**
 
-
-
 **成功，并直接用Pycharm打开项目。 项目开发**
 
-
-
 **添加app.py文件，提示是否加入到git**
-
-
 
 **编写源码app.py**
 
