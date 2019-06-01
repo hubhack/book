@@ -44,7 +44,7 @@ yum install git
 | remote 远程版本库          | 网络上的另一个版本库，可以和本地库交互                  |
 
 
-![](.\img\仓库.png)
+![](./img/仓库.png)
 
 **使用**
 
