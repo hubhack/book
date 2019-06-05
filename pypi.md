@@ -69,3 +69,4 @@ twine upload dist/*
 
 即可上传到pypi
 
+编译可以下载pyinstaller
